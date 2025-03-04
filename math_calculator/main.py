@@ -1,12 +1,14 @@
 import sys
-from utils import calculator,validator
+from utils import calculator
+from utils import validator
 print("Welcome to the Mathematical Expression Validator and Calculator!")
-user_input=input("Enter a mathematical expression (or 'exit' to quit):")
-if user_input=='exit':
-    sys.exit()
-else:
-    user_input=input("Enter a mathematical expression (or 'exit' to quit):")
-k=calculator.is_valid_expression(user_input)
-if k:
-    v=validator.calculate(user_input)
-print(f"The result is:{v}")
+while True:
+    user_input=input("Enter a mathematical expression (or) 'exit' to quit:")
+    k=validator.is_valid_expression(user_input)
+    if k:
+        v=calculator.calculate(user_input)
+        print(v)
+    elif not k:
+        print("Not a valid expression")
+    elif user_input=='exit':
+        sys.exit(0)

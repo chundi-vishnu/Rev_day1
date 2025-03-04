@@ -1,3 +1,7 @@
 def calculate(expression: str) -> float:
-    for i in expression:
-        
+    try:
+        k=eval(expression)
+        return k
+    except Exception as e:
+        print(e)
+
